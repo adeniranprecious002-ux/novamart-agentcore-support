@@ -77,7 +77,7 @@ flowchart TD
 
 Every tool call is recorded as an X-Ray subsegment, so the Trace Map shows the full call chain: Client, orchestrator, the four worker agents, and one node per Knowledge Bases retrieval.
 
-![X-Ray Trace Map](screenshots/xray-service-map.png)
+![X-Ray Trace Map](screenshots/x-ray_service_map.png)
 
 ## Running it
 
