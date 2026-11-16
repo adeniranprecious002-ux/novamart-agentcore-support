@@ -79,6 +79,57 @@ Every tool call is recorded as an X-Ray subsegment, so the Trace Map shows the f
 
 ![X-Ray Trace Map](screenshots/x-ray_service_map.png)
 
+## Results
+
+### Full test suite: 120/120
+
+The course test harness (`python tests/test_agent.py all`), captured as one continuous run across three screenshots. The last one ends at the perfect score.
+
+![Full test run, part 1](screenshots/all_run_1.png)
+![Full test run, part 2](screenshots/all_run_2.png)
+![Full test run, part 3: Score 120/120](screenshots/all_run_3.png)
+
+<details>
+<summary>Per-task test results (Tasks 2 to 6)</summary>
+
+| Task | Focus | Screenshot |
+|---|---|---|
+| 2 | Multi-agent graph, routing, WorkflowState | ![Task 2](screenshots/Task_2.png) |
+| 3 | AgentCore Runtime and guardrail | ![Task 3](screenshots/Task_3.png) |
+| 4 | AgentCore Memory | ![Task 4](screenshots/Task_4.png) |
+| 5 | Knowledge Bases and parallel retrieval | ![Task 5, part 1](screenshots/Task_5.1.png) ![Task 5, part 2](screenshots/Task_5.2.png) |
+| 6 | CloudWatch logging and X-Ray tracing | ![Task 6](screenshots/Task_6.png) |
+
+</details>
+
+### Deployment in the AWS console
+
+<details>
+<summary>Knowledge Bases, runtime, guardrail and memory</summary>
+
+**Knowledge Bases:** three vector-store KBs, available and synced.
+
+![Knowledge Bases list](screenshots/KB.png)
+![Knowledge Base overview](screenshots/KB_overview.png)
+
+**AgentCore Runtime:** deployed and active.
+
+![Agent runtime](screenshots/Agent_runtime.png)
+![Runtime configuration: S3 code source, IAM role, HTTP protocol](screenshots/agent_config.png)
+![Runtime endpoint](screenshots/agent_endpoint.png)
+
+**Runtime environment variables:** KB IDs, guardrail ID and version, log group and tracing settings.
+
+![Runtime environment variables, page 1](screenshots/env_variables.png)
+![Runtime environment variables, page 2](screenshots/env_variables_2.png)
+
+**Guardrail and memory:**
+
+![Guardrail](screenshots/agent_guardrails.png)
+![AgentCore Memory](screenshots/agent_memory.png)
+
+</details>
+
 ## Running it
 
 The starter files (CloudFormation template, seed data, `config.py`, helper modules and tests) come from Udacity's course repo and are not included here. To run this project:
@@ -119,9 +170,12 @@ Approved returns change an order's status, so re-run `python infrastructure/seed
 
 ```
 src/agent_orchestrator.py   # all five agents, WorkflowState, guardrail, deploy, memory, observability
-screenshots/                # X-Ray Trace Map and test results
+screenshots/                # test results (120/120), AWS console deployment evidence, X-Ray Trace Map
 README.md
 ```
+
+## Contact
+
 - LinkedIn: https://www.linkedin.com/in/precious-adeniran-842b58294
 - Email: adeniranprecious002@gmail.com
-- GitHub: https://github.com/adeniranprecious002-ux# novamart-agentcore-support
+- GitHub: https://github.com/adeniranprecious002-ux
